@@ -44,7 +44,7 @@
     color: black;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .menuResponsives {
         display: inline-block;
         position: fixed;
@@ -61,24 +61,24 @@
     }
 
     .header-link {
-        background-color: rgba(47, 41, 61, 0.95);
+        background-color: rgba(73, 70, 80, 0.95);
         position: fixed;
+        top: -80vh;
         left: 0;
-        top: 0;
         width: 100%;
-        height: 110vh;
+        height: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 2em;
-        transition: left .5s;
+        gap: 1em;
+        transition: top .5s;
         padding: 0;
-        z-index: 1000;
     }
 
     .actives {
-        left: 110%
+        top: 0;
+        height: 200px;
     }
 
     .header-link li span{
