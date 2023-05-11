@@ -12,7 +12,7 @@
     transform: translate(calc(-2/3 * 100%));
 }
 .slider__img-container{
-    padding: 3em;
+    padding: 1.8em;
     width: 100%;
     aspect-ratio: 1.5;
 }

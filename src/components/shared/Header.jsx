@@ -6,7 +6,7 @@ import getConfigToken from '../../utils/getConfigToken'
 const Header = () => {
     const [hasToken, setHasToken] = useState(!!localStorage.getItem('token'))
 
-    const [nawBar, setNawBar] = useState(true)
+    const [nawBar, setNawBar] = useState(false)
 
 
     useEffect(() => {
