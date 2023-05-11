@@ -51,7 +51,7 @@ const ProductInfo = ({ product }) => {
                     </div>
                 </div>
 
-                <button className='product-info__add-to-cart' onClick={handleAddToCard}>Add to cart</button>
+                <button className='product-info__add-to-cart' onClick={handleAddToCard}>Add to cart <i className='bx bxs-cart' ></i></button>
 
             </footer>
         </section>

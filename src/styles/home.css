@@ -49,7 +49,7 @@
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   .filterCategory {
     display: none
   }
@@ -59,27 +59,27 @@
   }
 
   .home__input {
-    width: 80%;
-    left: 10%;
+    width: 70%;
+    left: 15%;
   }
 
   .menuResponsive {
-    background-color: rgb(214, 207, 236);
+    background-color:brown;
     position: fixed;
     top: 5em;
-    left: 0px;
-    padding: 0.5em;
-    border-radius: 0 1em 1em 0;
-    z-index: 2000;
+    left: 0.1em;
+    padding: 0.3em;
+    border-radius: 50%;
+    z-index: 800;
   }
 
   .filterCategory {
-    background-color: rgb(222, 222, 226);
+    background-color: rgb(222, 222, 226, 95%);
     position: fixed;
     left: 0;
-    top: 0;
-    width: 50%;
-    height: 110vh;
+    top: 4em;
+    width: 270px;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,12 +87,12 @@
     gap: 2em;
     transition: left .5s;
     padding: 0;
-    z-index: 2000;
+    z-index: 500;
 
   }
 
   .active {
-    left: 110%
+    left: -110%
   }
 
   .bx-filter {

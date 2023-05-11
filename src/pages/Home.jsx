@@ -62,7 +62,7 @@ const Home = () => {
        <div className='menuResponsive'>
         <div onClick={handleMenu} className="bx bx-filter"></div>
       </div>
-      
+
       <input className='home__input' ref={input} onChange={handleChangeInput} type="text" placeholder='what are you looking for?' />
       <div className='home__content'>
 

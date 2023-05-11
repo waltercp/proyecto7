@@ -7,10 +7,12 @@
   }
   
   .productId-Slider{
+    display: flex;
+    justify-content: center;
     width: 30em;
   }
   .productId-Product{
-    width: 40em;
+    width: 30em;
   }
   
   .productId-Similar {
