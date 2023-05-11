@@ -1,0 +1,25 @@
+.productPurchases_article{
+    display: grid;
+    grid-template-columns:  6em 1fr 2em;
+    gap: 1em;
+    align-items: center;
+    width: 100%;
+    max-width: 25em;
+}
+
+
+.productPurchases_title{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
+.productPurchases-value{
+    font-weight: 700;
+}
+
+.productPurchases-value::before{
+    content: '$';
+    padding-right: 0.3em;
+}

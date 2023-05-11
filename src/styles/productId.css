@@ -1,0 +1,24 @@
+.productId {
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+  }
+  
+  .productId-Slider{
+    width: 30em;
+  }
+  .productId-Product{
+    width: 40em;
+  }
+  
+  .productId-Similar {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .productId-Slider, .productId-Product, .productId-Similar {
+      width: 100%;
+    }
+  }

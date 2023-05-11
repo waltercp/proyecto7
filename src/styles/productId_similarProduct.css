@@ -1,0 +1,17 @@
+.similarProduct {
+  margin-top: 2em;
+}
+
+.similarProduct h2 {
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-left: 5em;
+}
+
+.similarProduct-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 2em;
+}

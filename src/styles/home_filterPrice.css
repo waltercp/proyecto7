@@ -1,0 +1,49 @@
+.filterPrice__article {
+    padding: 10px 10px 30px;
+  }
+  
+  .filterPrice__price {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .filterPrice__form {
+    display: flex;
+    flex-direction: column;
+    width: 14em;
+  }
+  
+  .filterPrice__from,
+  .filterPrice__to {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .filterPrice__from label,
+  .filterPrice__to label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .filterPrice__from input,
+  .filterPrice__to input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .filterPrice {
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 16px;
+    text-align: center;
+    background-color: brown
+  }

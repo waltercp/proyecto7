@@ -1,0 +1,11 @@
+.filterCategory_article{
+    padding: 10px 10px 30px;
+}
+
+
+.filterCategory__category-list {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
