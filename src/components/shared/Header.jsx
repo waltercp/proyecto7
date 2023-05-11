@@ -17,6 +17,7 @@ const Header = () => {
     const handleLogout = () => {
         localStorage.removeItem('token')
         setHasToken(false)
+        window.location.reload()
     }
 
     const handleMenu = () => {
