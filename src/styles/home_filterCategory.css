@@ -1,5 +1,5 @@
-.filterCategory_article{
-    padding: 10px 10px 30px;
+.filterCategory_article {
+    padding: 10px 5px 0 10px;
 }
 
 
@@ -7,5 +7,17 @@
     cursor: pointer;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+
+.filterCategory__category-list.selected {
+    background-color: rgb(255, 0, 0,50%);
   }
-  
+
+@media (max-width: 700px) {
+    .filterCategory_article {
+        padding: 65px 5px 0 10px;
+    }
+    
+
+}

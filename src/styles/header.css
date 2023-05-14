@@ -44,6 +44,10 @@
     color: black;
 }
 
+.header-link_li.selected span {
+    color:brown;
+  }
+
 @media (max-width: 550px) {
     .menuResponsives {
         display: inline-block;
@@ -85,4 +89,8 @@
         font-size: 1em;
         color: white;
     }
+    .header-link_li.selected span {
+        color:rgb(255, 0, 0);
+        font-weight: bold;
+      }
 }

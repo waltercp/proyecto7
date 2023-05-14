@@ -30,30 +30,35 @@ const ProductInfo = ({ product }) => {
 
     }
 
-    
+
     return (
         <section className='product-info'>
             <h3 className='product-info__brand'>{product?.brand}</h3>
             <h2 className='product-info__title'>{product?.title}</h2>
-            <p className='product-info__description'>{product?.description}</p>
+            <div className='product-info-container'>
+                <p className='product-info__description'>{product?.description}</p>
 
-            <footer className='product-info__footer'>
-                <div className='product-info__price'>
-                    <span>Price</span>
-                    <span>{product?.price}</span>
-                </div>
-                <div className='product-info__quantity'>
-                    <span>Quantity</span>
-                    <div>
-                        <button onClick={handleMinus}>-</button>
-                        <div><p>{quantity}</p></div>
-                        <button onClick={handlePlus}>+</button>
+                <footer className='product-info__footer'>
+                    <div className='product-info__price'>
+                        <span>Price</span>
+                        <span>{product?.price}</span>
                     </div>
-                </div>
+                    <div className='product-info__quantity'>
+                        <span>Quantity</span>
+                        <div>
+                            <button onClick={handleMinus}>-</button>
+                            <div><p>{quantity}</p></div>
+                            <button onClick={handlePlus}>+</button>
+                        </div>
+                    </div>
 
-                <button className='product-info__add-to-cart' onClick={handleAddToCard}>Add to cart <i className='bx bxs-cart' ></i></button>
+                    <button className='product-info__add-to-cart' onClick={handleAddToCard}>Add to cart <i className='bx bxs-cart' ></i></button>
 
-            </footer>
+                </footer>
+
+            </div>
+
+
         </section>
     )
 }

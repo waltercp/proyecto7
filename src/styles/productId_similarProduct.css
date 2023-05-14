@@ -5,7 +5,8 @@
 .similarProduct h2 {
   font-weight: 900;
   font-size: 1.2rem;
-  margin-left: 5em;
+  margin-left: 16%;
+  color: brown;
 }
 
 .similarProduct-content {

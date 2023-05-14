@@ -1,0 +1,36 @@
+.filter-drop-down{
+    overflow: hidden;
+    transition: 1s all;
+    max-height: 300px;
+}
+
+.closed{
+    max-height: 40px;
+}
+
+ .title__price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--light-gray);
+    font-size: 1.1rem;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+ .title__price i{
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: 1s all;
+}
+
+.filter-drop-down.closed .title__price i{
+    transform: rotate(-180deg);
+}
+
+.filter-drop-down .content{
+    padding: 0 5px;
+}
+

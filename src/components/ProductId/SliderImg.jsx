@@ -45,6 +45,22 @@ const SliderImg = ({ product }) => {
           ))
         }
       </div>
+      <div className='slider-muestra'>
+        {
+          product?.images.map((imgInfo, i) => (
+            <li
+              key={imgInfo.id}
+              className={numbertImg === i? 'selecto' : ''}
+            >
+              <img
+                src={imgInfo.url}
+                alt=""
+                onClick={() => setNumbertImg(i)}
+              />
+            </li>
+          ))
+        }
+      </div>
       <button onClick={handleNext} className='slider__arrow slider_rigth'>&gt;</button>
     </div>
   )

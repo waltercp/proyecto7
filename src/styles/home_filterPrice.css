@@ -2,12 +2,6 @@
     padding: 10px 10px 30px;
   }
   
-  .filterPrice__price {
-    font-size: 18px;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
   .filterPrice__form {
     display: flex;
     flex-direction: column;
