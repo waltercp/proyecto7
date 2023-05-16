@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-  min-height: 100vh;
+
   padding: 1em;
 }
 
@@ -88,4 +88,16 @@
 .alertCorrect {
   transition: scale 0.2s ease-in-out;
   scale: 1;
+}
+
+.usuarioLogin{
+  margin-top: 40px;
+  background-color: rgb(240, 132, 132, 40%);
+  padding: 1em;
+  border-radius: 1em;
+  font-weight: bold;
+}
+
+.usuarioLogin span{
+  font-weight: 400;
 }

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getAllProductsThunk } from '../../store/slices/products.slices'
 import '../../styles/home_filterCategory.css'
 import DropDown from './DropDown'
+import { setCategoyName } from '../../store/slices/category.slice'
+
 
 
 
@@ -11,7 +13,9 @@ const FilterCategory = () => {
 
     const dispatch = useDispatch()
 
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const { categoryGlobal } = useSelector(state => state)
+    
+
 
 
     const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories'
@@ -19,15 +23,19 @@ const FilterCategory = () => {
 
     useEffect(() => {
         getAllCategories()
+
     }, [])
 
     const handleClickCategory = id => {
-        setSelectedCategory(id);
+        dispatch(setCategoyName(id))
+
         const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`
         dispatch(getAllProductsThunk(url))
     }
+
+
     const handleClickProducts = () => {
-        setSelectedCategory(null);
+        dispatch(  setCategoyName(null))
         dispatch(getAllProductsThunk())
     }
 
@@ -36,10 +44,10 @@ const FilterCategory = () => {
             <DropDown header="Category">
                 <ul className='filterCategory__category'>
 
-                    <li className={`filterCategory__category-list ${selectedCategory === null ? "selected" : ""}`} onClick={handleClickProducts}>All Products</li>
+                    <li className={`filterCategory__category-list ${categoryGlobal === null ? "selected" : ""}`} onClick={handleClickProducts}>All Products</li>
                     {
                         categories?.map(category => (
-                            <li className={`filterCategory__category-list ${selectedCategory === category.id ? "selected" : ""}`} onClick={() => handleClickCategory(category.id)} key={category.id}>{category.name}</li>
+                            <li className={`filterCategory__category-list ${categoryGlobal === category.id ? "selected" : ""}`} onClick={() => handleClickCategory(category.id)} key={category.id}>{category.name}</li>
                         ))
                     }
                 </ul>
@@ -48,5 +56,7 @@ const FilterCategory = () => {
         </article>
     )
 }
+
+
 
 export default FilterCategory

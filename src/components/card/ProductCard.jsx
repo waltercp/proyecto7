@@ -9,7 +9,7 @@ const ProductCard = ({ prodCart }) => {
     const {deleteProductFromCart} = useCrudCart()
 
     const handleDeleteCart = () => {
-        deleteProductFromCart(prodCart.id)
+        deleteProductFromCart(prodCart.id,)
     }
 
   return (

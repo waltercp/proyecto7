@@ -5,7 +5,10 @@ import FilterCategory from '../components/Home/FilterCategory'
 import '../styles/home.css'
 import FilterPrice from '../components/Home/FilterPrice'
 
+
 const Home = () => {
+
+
 
   const [filter, setFiltere] = useState(true)
 
@@ -52,22 +55,24 @@ const Home = () => {
     })
 
 
-    const handleMenu = () => {
-      setFiltere(!filter)
-    }
-  
+  const handleMenu = () => {
+    setFiltere(!filter)
+  }
+
+
+
 
   return (
     <div className='home' >
-       <div className={`menuResponsive ${filter? ' ' : 'menuResponsiveClose'} ` }>
-        <div onClick={handleMenu} className={`bx bx-filter ${filter? '' : 'bxs-x-circle'} ` }></div>    
+      <div className={`menuResponsive ${filter ? ' ' : 'menuResponsiveClose'} `}>
+        <div onClick={handleMenu} className={`bx bx-filter ${filter ? '' : 'bxs-x-circle'} `}></div>
       </div>
 
       <input className='home__input' ref={input} onChange={handleChangeInput} type="text" placeholder='what are you looking for?' />
       <div className='home__content'>
 
-      
-        <div className={`filterCategory ${filter? 'active' : ''} ` }>
+
+        <div className={`filterCategory ${filter ? 'active' : ''} `}>
           <h4 className='home_filter_active'>Filter</h4>
           <FilterCategory />
           <FilterPrice
@@ -86,6 +91,8 @@ const Home = () => {
           }
         </div>
       </div>
+
+
     </div>
   )
 }

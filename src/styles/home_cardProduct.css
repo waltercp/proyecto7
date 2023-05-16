@@ -6,6 +6,7 @@
     transition: transform 200ms ease;
     cursor: pointer;
     border-radius: 0.8em;
+    position: relative;
 }
 
 .product:hover{
@@ -72,6 +73,12 @@
     flex-direction: column;
 }
 
+.product__price-value::before{
+    content: '$';
+    padding-right: 0.3em;
+}
+
+
 
 .product__price-label{
     color: #999;
@@ -96,3 +103,48 @@
 }
 
 
+
+.formAlertProduct  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0002;
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+    transition: scale 0.2s ease-in-out;
+  }
+  
+  .alertProduct {
+    padding: 1em 3em 1em 1em;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 1em;
+    max-width: 500px;
+  }
+  
+  .alertProduct h3 {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .alertProduct img {
+    padding: 1.5em;
+    width: 6em;
+  }
+  
+  .alertAdd {
+    transition: scale 0.2s ease-in-out;
+    scale: 1;
+
+  }

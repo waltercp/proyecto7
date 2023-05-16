@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/header.css'
-import getConfigToken from '../../utils/getConfigToken'
+
 
 const Header = () => {
+    const navigate = useNavigate();
     const [hasToken, setHasToken] = useState(!!localStorage.getItem('token'))
-
     const [nawBar, setNawBar] = useState(false)
     const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
+    const [closeSession, setCloseSession] = useState()
 
 
     useEffect(() => {
@@ -18,7 +19,9 @@ const Header = () => {
     const handleLogout = () => {
         localStorage.removeItem('token')
         setHasToken(false)
+        navigate('/login')
         window.location.reload()
+       
     }
 
     const handleMenu = () => {
@@ -26,13 +29,31 @@ const Header = () => {
     }
 
     const handleClickMenu = (index) => {
-        setSelectedItemIndex(index);
-        setNawBar(!nawBar)
+        if (index === -1) {
+            setSelectedItemIndex(-1);
+        } else {
+            setSelectedItemIndex(index);
+            setNawBar(!nawBar);
+        }
     };
+
+    const handleSession = () => {
+        setCloseSession(!closeSession)
+    }
+
+
 
 
     return (
         <header className='header'>
+
+            <div className={`headerLogout  ${closeSession? "headerSession" : ""} `}>
+                <div className="headerLogout-content">
+                <button className='buttonClose' onClick={handleSession}>X</button>
+                    <h3>CERRAR SESSION</h3>
+                    <button className='buttonCloseSession' onClick={handleLogout}>Acectar</button>
+                </div>
+            </div>
 
 
             <div className='menuResponsives'>
@@ -40,8 +61,12 @@ const Header = () => {
             </div>
 
             <h1 className='header__tilte'>
-                <Link to='/'><h3>e-commerce</h3></Link>
+                <Link to='/' onClick={() => handleClickMenu(-1)}>
+                    <h3>e-commerce</h3>
+                </Link>
             </h1>
+
+
             <nav className='header__nav'>
                 <ul className={`header-link ${nawBar ? 'actives' : ''}`}>
                     {hasToken ? (
@@ -65,11 +90,9 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li
-                                onClick={() => handleClickMenu(2)}
-                                className={`header-link_li ${selectedItemIndex === 2 ? 'selected' : ''
-                                    }`}
+                                className={`header-link_li }`}
                             >
-                                <span onClick={handleLogout}>Logout</span>
+                                <span onClick={handleSession}>Logout</span>
                             </li>
                         </>
                     ) : (

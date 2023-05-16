@@ -3,20 +3,18 @@ import '../../styles/home_cardProduct.css';
 import { useNavigate } from 'react-router-dom';
 import useCrudCart from '../../hooks/useCrudCart';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { setproductAdd } from '../../store/slices/productAdd.Slice';
 
 const CardProduct = ({ product }) => {
   const navigate = useNavigate();
+
   const { addProductToCart } = useCrudCart();
 
-
-
+  const { cartGlobal } = useSelector(state => state)
 
 
   const dispatch = useDispatch()
   const { productAaddGlobal } = useSelector(state => state)
-  const { cartErrorGlobal } = useSelector(state => state)
-
 
   const handleSelectProduct = () => {
     navigate(`/product/${product.id}`);
@@ -29,14 +27,12 @@ const CardProduct = ({ product }) => {
       productId: product.id,
     };
     addProductToCart(data);
-
+    dispatch(setproductAdd(true)) 
   };
 
 
+  console.log(cartGlobal)
 
-
-
-  
   return (
     <article className="product" onClick={handleSelectProduct}>
       <header className="product__header">
@@ -59,21 +55,14 @@ const CardProduct = ({ product }) => {
         </button>
       </div>
 
-      <div className={`formAlertProduct  ${productAaddGlobal == product.id ? "alertAdd" : ""} `}>
-        <div className="alertProduct">
-          <img src="/iconCheck.png" alt="" />
-          <h3>{product.title}  agregado a Cart</h3>
+      {productAaddGlobal && (
+        <div className="formAlertProduct alertAdd">
+          <div className="alertProduct">
+            <img src="/iconCheck.png" alt="" />
+            <h3>Producto agregado a Cart</h3>
+          </div>
         </div>
-      </div>
-
-      <div className={`formAlertProduct  ${cartErrorGlobal == product.id ? "alertAdd" : ""} `}>
-        <div className="alertProduct">
-          <img src="/iconError.png" alt="" />
-          <h3>{product.title} ya se encuentra en Cart</h3>
-        </div>
-      </div>
-
-
+      )}
     </article>
   );
 };

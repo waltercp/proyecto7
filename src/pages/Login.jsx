@@ -7,10 +7,6 @@ const Login = () => {
 
     const { loginUser, loginError } = useAutentication()
 
-
-  
-
-
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value
@@ -40,6 +36,12 @@ const Login = () => {
                     <img src="/iconError.png" alt="" />
                     <h3>Error al iniciar Session</h3>
                 </div>
+            </div>
+
+
+            <div className='usuarioLogin'>
+                <p>Email: <span> usuarioPrueba@gmail.com</span></p>
+                <p>Password: <span>usuario1234</span> </p>
             </div>
         </form>
     )

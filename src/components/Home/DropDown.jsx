@@ -5,7 +5,7 @@ import '../../styles/home_filters.css';
 
 const DropDown = ({ header, children }) => {
 
-    const [ isOpen, setIsOpen ] = useState(false)
+    const [ isOpen, setIsOpen ] = useState(true)
 
     return (
         <div className={`filter-drop-down ${isOpen ? '' : 'closed'}`}>
